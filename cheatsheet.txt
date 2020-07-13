@@ -1,0 +1,29 @@
+Let/Const
+1. let has a block scope, not available outside of the curly braces
+2. const variables can't be changed, unless they are reference types (arrays, objects)
+3. hoisting does not work with let/const variables
+
+Arrow functions
+1. if the func has only one line of code, and it's a return, the return word can be omitted
+2. this doesn't changes it's context depending on from where it is called
+
+Default Parameters
+1. Default values for parameters are available, with the = sign
+
+Object literals
+1. You are allowed to not provide the values for properties, if they are defined before the object
+2. dynamic name adding is available with []
+    let field = "fieldName"
+    let obj  = {
+        [field]: 25
+    }
+
+Operators
+1. Rest operator (...parameter) - puts all the parameters into an array
+2. Spread operator (...array) = spreads the elements from an array into individual variables
+
+For-of loop
+1. Works like the foreach loop
+
+Template literals
+1. Example `${var1} is very ${var2}`
