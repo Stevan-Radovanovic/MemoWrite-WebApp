@@ -56,4 +56,26 @@ Classes
 
 Symbols
 1. Unique values, not iterable
-2. Symbol.for("something") enaables multiple same symbols
+2. Symbol.for("something") enables multiple same symbols
+
+Iterators
+1. Used with Symbol.Iterator
+2. Used to override an array's iterator
+3. Used for making an object iterable
+
+Generators
+1. * before the function name, returns an iterator
+
+Promises
+1. every promise has a function with a resolve and reject parameter
+2. then has two functions, first for resolve, second for reject
+3. All errors can be caught with a catch block
+4. Better way to write - async/await
+5. Promise.All - wait for all Promises
+6. Promise.Race - wait for the first promise
+
+Arrays
+1. created with new Array() or []
+2. to create with length new Array(5)
+3. to create with elements new Array.of(1,2,3)
+4. Array.for() to create a new array from an existing one, with the second argument being used to fondle with the elements
