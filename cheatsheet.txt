@@ -27,3 +27,21 @@ For-of loop
 
 Template literals
 1. Example `${var1} is very ${var2}`
+
+Destructuring 
+1. Arays - You can select multiple elements of an array
+let [a,b] = array
+2. Destructuring can be used for switching values between variables
+let [a,b] = [b,a]
+3. Objects - Same logic, just with curly braces
+4. With :, you can change the name od some destructured variable
+let [a,b:c] = obj - b is now referenced as c outside of the object
+
+Modules
+1. KeyWords import and export
+2. Import statements without extensions
+3. Exports can be listed in the end {}
+4. We are not importing values, but references
+5. Default is imported by removing curly braces
+6. Aliases - with as KeyWord
+7. To import everything - import * as something from "file"
