@@ -45,3 +45,15 @@ Modules
 5. Default is imported by removing curly braces
 6. Aliases - with as KeyWord
 7. To import everything - import * as something from "file"
+
+Classes 
+1. Inheritance with the word extends
+2. The class that is extending must have a super call in it's constructor
+3. static keyword makes a function static
+4. Private properties with an underscore (just a convention)
+5. Getter get name() {}
+6. Setter set name() {}
+
+Symbols
+1. Unique values, not iterable
+2. Symbol.for("something") enaables multiple same symbols
