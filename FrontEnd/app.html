@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
   </head>
   <body>
     <section class="hero is-primary">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title has-text-centered">
-              Note App
-            </h1>
-            <h2 class="subtitle has-text-centered">
-              Add your notes!
-            </h2>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered">
+            Note App
+          </h1>
+          <h2 class="subtitle has-text-centered">
+            Add your notes!
+          </h2>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-primary"
+              type="text"
+              placeholder="Enter your memo"
+            />
           </div>
         </div>
-      </section>
+      </div>
+      <div class="column is-1" style="align-items: center;">
+        <button class="button is-primary">Add</button>
+      </div>
+    </div>
   </body>
 </html>
