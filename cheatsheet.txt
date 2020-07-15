@@ -79,3 +79,23 @@ Arrays
 2. to create with length new Array(5)
 3. to create with elements new Array.of(1,2,3)
 4. Array.for() to create a new array from an existing one, with the second argument being used to fondle with the elements
+
+Maps
+1. A collection of key-value pairs
+2. .size for the size
+3. .set for adding, .get for finding
+4. everything works by key
+5. keys+values=entries
+6. WeakMap - Objects as keys, looping not possible
+
+Sets
+1. Arrays with no duplicates
+2. .add i .has
+3. WeakSet - Stores only objects
+
+Reflect API
+1. Reflect.construct(class,array of arguments,override of Prototype)
+2. Reflect.apply(method,what does the this reffer to)
+3. Reflect.getPrototypeOf(object) / Reflect.setPrototypeOf(object, newProto)
+4. Reflect.get(object,'nameOfProperty')
+5. Reflect.get(object,'nameOfProperty')
