@@ -99,3 +99,6 @@ Reflect API
 3. Reflect.getPrototypeOf(object) / Reflect.setPrototypeOf(object, newProto)
 4. Reflect.get(object,'nameOfProperty')
 5. Reflect.get(object,'nameOfProperty')
+6. Reflect.ownKeys(object)
+7. Reflect.defineProperty(), .deleteProperty()
+8. Reflect.preventExtensions()
