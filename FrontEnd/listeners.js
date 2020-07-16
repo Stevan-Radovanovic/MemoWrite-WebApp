@@ -14,11 +14,21 @@ async function addMemo() {
     const elem = document.createElement("div");
     elem.classList.add("column", "is-4");
     elements.memoList.appendChild(elem);
+
     const newMemo = document.createElement("div");
-    newMemo.classList.add("notification", "is-primary", "modal-width");
-    newMemo.innerText = memo.text;
+    newMemo.classList.add("notification", "is-danger", "modal-width");
     elem.appendChild(newMemo);
-    //await Http.storeMemo("link" + newMemoText);
+    const title = document.createElement("p");
+    title.classList.add("subtitle");
+    title.innerText = "Memo";
+    newMemo.appendChild(title);
+    const hr = document.createElement("hr");
+    newMemo.appendChild(hr);
+    const text = document.createElement("p");
+    text.innerText = newMemoText;
+    newMemo.appendChild(text);
+
+    await Http.storeMemo("link" + newMemoText);
   } catch {
     alert("Shit");
   }
