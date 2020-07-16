@@ -1,4 +1,5 @@
 import * as elements from "./elements.js";
+import * as listeners from "./listeners.js";
 
 console.log("Note App JS Script");
-console.log(elements);
+elements.noteButton.addEventListener("click", listeners.addMemo);
