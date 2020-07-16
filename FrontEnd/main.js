@@ -7,3 +7,4 @@ elements.emptyModalButton.addEventListener(
   "click",
   listeners.closeEmptyMemoModal
 );
+listeners.asyncFetch();

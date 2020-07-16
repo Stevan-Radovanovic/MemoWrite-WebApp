@@ -5,7 +5,7 @@ export default class Http {
       http.open("GET", url);
       http.onStateChanged = function () {
         if (http.readyState === DONE && http.status === 200) {
-          resolve(JSON.parse(http.responseText));
+          resolve(http.response);
         } else if (http.readyState === DONE) {
           reject("There was a problem with the server...");
         }

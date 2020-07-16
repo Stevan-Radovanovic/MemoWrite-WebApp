@@ -40,4 +40,14 @@ function createMemoHtml(newMemoText) {
   newMemo.appendChild(text);
 }
 
-export { addMemo, closeEmptyMemoModal };
+const memoArray = [];
+
+async function asyncFetch() {
+  try {
+    memoArray = await Http.fetchMemos("http://localhost:3000/memos");
+  } catch {
+    alert("Something went wrong!");
+  }
+}
+
+export { addMemo, closeEmptyMemoModal, memoArray, asyncFetch };
