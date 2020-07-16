@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const memoRoutes = require("./memo-routes");
 
 const app = express();
 
@@ -31,5 +32,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.use("/memos", memoRoutes);
 
 module.exports = app;
