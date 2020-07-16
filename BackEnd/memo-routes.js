@@ -16,6 +16,7 @@ router.post("/", async (req, res, next) => {
     res.status(500).json({ error: error });
   }
 });
+
 router.get("/", async (req, res, next) => {
   try {
     const memos = await Memo.find();
