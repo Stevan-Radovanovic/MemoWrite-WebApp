@@ -11,7 +11,14 @@ async function addMemo() {
   console.log("Memo created: " + newMemoText);
   const memo = new Memo(newMemoText);
   try {
-    await Http.storeMemo("link" + newMemoText);
+    const elem = document.createElement("div");
+    elem.classList.add("column", "is-4");
+    elements.memoList.appendChild(elem);
+    const newMemo = document.createElement("div");
+    newMemo.classList.add("notification", "is-primary", "modal-width");
+    newMemo.innerText = memo.text;
+    elem.appendChild(newMemo);
+    //await Http.storeMemo("link" + newMemoText);
   } catch {
     alert("Shit");
   }
