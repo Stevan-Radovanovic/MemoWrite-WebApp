@@ -12,9 +12,9 @@ async function addMemo() {
   const memo = new Memo(newMemoText);
   try {
     createMemoHtml(memo.text);
-    await Http.storeMemo("link" + newMemoText);
+    await Http.storeMemo("http://localhost:3000/memos");
   } catch {
-    alert("Shit");
+    alert("Something went wrong!");
   }
 }
 
