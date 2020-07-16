@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const memoRoutes = require("./memo-routes");
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -15,6 +16,8 @@ mongoose
   .catch(() => {
     console.log("Connection to the database failed");
   });
+
+app.use(bodyParser.json());
 
 app.get("/", function (req, res, next) {
   res.send("Server started");
