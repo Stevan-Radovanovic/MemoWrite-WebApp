@@ -17,7 +17,7 @@ mongoose
     console.log("Connection to the database failed");
   });
 
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res, next) {
   res.send("Server started");

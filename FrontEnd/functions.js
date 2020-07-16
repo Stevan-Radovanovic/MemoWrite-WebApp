@@ -12,7 +12,7 @@ async function addMemo() {
   const memo = new Memo(newMemoText);
   try {
     createMemoHtml(memo.text);
-    await Http.storeMemo("http://localhost:3000/memos");
+    await Http.storeMemo("http://localhost:3000/memos", memo.text);
   } catch (error) {
     alert("Something went wrong!");
     console.log(error);

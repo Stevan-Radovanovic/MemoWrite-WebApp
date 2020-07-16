@@ -1,11 +1,12 @@
 const express = require("express");
 const Memo = require("./memo-model");
+const { response } = require("express");
 const router = express.Router();
 
 router.post("/", async (req, res, next) => {
   console.log(req.body);
   const memo = new Memo({
-    text: "Test",
+    text: req.body.text,
   });
 
   try {

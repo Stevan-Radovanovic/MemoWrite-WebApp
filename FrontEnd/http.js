@@ -7,7 +7,6 @@ export default class Http {
         if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
           resolve(http.response);
         } else if (http.readyState === XMLHttpRequest.DONE) {
-          console.log(1);
           reject("There was a problem with the server...");
         }
       };
@@ -15,10 +14,14 @@ export default class Http {
     });
   }
 
-  static storeMemo(url) {
+  static storeMemo(url, text) {
     return new Promise((resolve, reject) => {
       const http = new XMLHttpRequest();
       http.open("POST", url);
+      http.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
       http.onreadystatechange = function () {
         if (http.readyState === XMLHttpRequest.DONE && http.status === 201) {
           resolve(http.response);
@@ -26,7 +29,7 @@ export default class Http {
           reject("There was a problem with the server...");
         }
       };
-      http.send();
+      http.send("text=" + text);
     });
   }
 }
