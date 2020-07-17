@@ -3,4 +3,13 @@ const noteInput = document.querySelector("#noteInput");
 const emptyModal = document.querySelector("#emptyModal");
 const emptyModalButton = document.querySelector("#emptyModalButton");
 const memoList = document.querySelector("#memoList");
-export { noteButton, noteInput, emptyModal, emptyModalButton, memoList };
+const consoleLogString =
+  "color: pink; background-color: black; font-weight: bold";
+export {
+  noteButton,
+  noteInput,
+  emptyModal,
+  emptyModalButton,
+  memoList,
+  consoleLogString,
+};

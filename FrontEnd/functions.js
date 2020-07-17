@@ -6,21 +6,26 @@ async function addMemo() {
   const newMemoText = elements.noteInput.value;
   if (newMemoText === null || newMemoText.length == 0) {
     elements.emptyModal.classList.add("is-active");
+    console.log("%c Activated modal", elements.consoleLogString);
     return;
   }
-  console.log("Memo created: " + newMemoText);
+  console.log("%c Memo created: " + newMemoText, elements.consoleLogString);
   const memo = new Memo(newMemoText, new Date().toDateString());
   try {
     createMemoHtml(memo);
     memoArray.push(memo);
     await Http.storeMemo("http://localhost:3000/memos", memo);
   } catch (error) {
-    alert("Something went wrong!");
+    console.log(
+      "%c Something went wrong with addMemo()",
+      elements.consoleLogString
+    );
     console.log(error);
   }
 }
 
 function closeEmptyMemoModal() {
+  console.log("%c Deactivated modal", elements.consoleLogString);
   elements.emptyModal.classList.remove("is-active");
 }
 
@@ -51,7 +56,10 @@ async function asyncFetch() {
     memoArray = json.memos;
     initializeMemoArrayHtml();
   } catch (error) {
-    alert("Something went wrong!");
+    console.log(
+      "%c Something went wrong with asyncFetch()",
+      elements.consoleLogString
+    );
     console.log(error);
   }
 }
@@ -60,6 +68,10 @@ function initializeMemoArrayHtml() {
   for (const memo of memoArray) {
     createMemoHtml(memo);
   }
+  console.log(
+    "%c Initialized the starting Memo array",
+    elements.consoleLogString
+  );
 }
 
 export { addMemo, closeEmptyMemoModal, memoArray, asyncFetch };
