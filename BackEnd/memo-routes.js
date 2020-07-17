@@ -14,7 +14,6 @@ router.post("/", async (req, res, next) => {
     await memo.save();
     res.status(201).json({ signal: true });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: error });
   }
 });
@@ -22,10 +21,8 @@ router.post("/", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const memos = await Memo.find();
-    console.log(memos);
     res.status(200).json({ memos: memos });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: error });
   }
 });

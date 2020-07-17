@@ -1,10 +1,10 @@
 import * as elements from "./elements.js";
-import * as listeners from "./functions.js";
+import * as functions from "./functions.js";
 
-console.log("Note App JS Script");
-elements.noteButton.addEventListener("click", listeners.addMemo);
+console.log("MemoWrite JS Script");
+elements.noteButton.addEventListener("click", functions.addMemo);
 elements.emptyModalButton.addEventListener(
   "click",
-  listeners.closeEmptyMemoModal
+  functions.closeEmptyMemoModal
 );
-listeners.asyncFetch();
+functions.asyncFetch();
