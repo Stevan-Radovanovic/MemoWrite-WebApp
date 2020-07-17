@@ -14,7 +14,7 @@ export default class Http {
     });
   }
 
-  static storeMemo(url, text) {
+  static storeMemo(url, memo) {
     return new Promise((resolve, reject) => {
       const http = new XMLHttpRequest();
       http.open("POST", url);
@@ -29,7 +29,7 @@ export default class Http {
           reject("There was a problem with the server...");
         }
       };
-      http.send("text=" + text);
+      http.send(`text=${memo.text}&date=${memo.date}`);
     });
   }
 }

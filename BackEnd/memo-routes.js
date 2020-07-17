@@ -7,6 +7,7 @@ router.post("/", async (req, res, next) => {
   console.log(req.body);
   const memo = new Memo({
     text: req.body.text,
+    date: req.body.date,
   });
 
   try {

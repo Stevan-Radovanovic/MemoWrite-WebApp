@@ -9,10 +9,11 @@ async function addMemo() {
     return;
   }
   console.log("Memo created: " + newMemoText);
-  const memo = new Memo(newMemoText);
+  const memo = new Memo(newMemoText, new Date().toDateString());
   try {
-    createMemoHtml(memo.text);
-    await Http.storeMemo("http://localhost:3000/memos", memo.text);
+    createMemoHtml(memo);
+    memoArray.push(memo);
+    await Http.storeMemo("http://localhost:3000/memos", memo);
   } catch (error) {
     alert("Something went wrong!");
     console.log(error);
@@ -23,23 +24,22 @@ function closeEmptyMemoModal() {
   elements.emptyModal.classList.remove("is-active");
 }
 
-function createMemoHtml(newMemoText) {
+function createMemoHtml(memo) {
   const elem = document.createElement("div");
   elem.classList.add("column", "is-4");
-  elements.memoList.appendChild(elem);
+  elements.memoList.prepend(elem);
   const newMemo = document.createElement("div");
   newMemo.classList.add("notification", "is-danger", "modal-width");
   elem.appendChild(newMemo);
   const title = document.createElement("p");
   title.classList.add("subtitle");
-  title.innerText = "Memo";
+  title.innerText = "Memo Created: " + memo.date;
   newMemo.appendChild(title);
   const hr = document.createElement("hr");
   newMemo.appendChild(hr);
   const text = document.createElement("p");
-  text.innerText = newMemoText;
+  text.innerText = memo.text;
   newMemo.appendChild(text);
-  memoArray.push(new Memo(newMemoText));
 }
 
 let memoArray = [];
@@ -58,21 +58,7 @@ async function asyncFetch() {
 
 function initializeMemoArrayHtml() {
   for (const memo of memoArray) {
-    const elem = document.createElement("div");
-    elem.classList.add("column", "is-4");
-    elements.memoList.appendChild(elem);
-    const newMemo = document.createElement("div");
-    newMemo.classList.add("notification", "is-danger", "modal-width");
-    elem.appendChild(newMemo);
-    const title = document.createElement("p");
-    title.classList.add("subtitle");
-    title.innerText = "Memo";
-    newMemo.appendChild(title);
-    const hr = document.createElement("hr");
-    newMemo.appendChild(hr);
-    const text = document.createElement("p");
-    text.innerText = memo.text;
-    newMemo.appendChild(text);
+    createMemoHtml(memo);
   }
 }
 
